@@ -27,7 +27,21 @@ function multiplicacao(x,y){
     return(console.log(`A multiplicação entre os dois números digitados é igual a ${mul}.`));
 }
 
+function divisao(x,y){
+    let div = x / y;
+
+    return(console.log(`A divisão entre os dois números digitados é igual a ${div}.`));
+}
+
+function porcentagem(x,y){
+    let per = (x / y) * 100;
+
+    return(console.log(`O primeiro número digitado representa ${per}% do segundo`));
+}
+
 entrada();
 adicao(num[0],num[1]);
 subtracao(num[0],num[1]);
 multiplicacao(num[0],num[1]);
+divisao(num[0],num[1]);
+porcentagem(num[0],num[1]);
