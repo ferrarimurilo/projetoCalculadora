@@ -21,6 +21,13 @@ function subtracao(x,y){
     return(console.log(`A subtração entre os dois números digitados é igual a ${sub}.`));
 }
 
+function multiplicacao(x,y){
+    let mul = x * y;
+
+    return(console.log(`A multiplicação entre os dois números digitados é igual a ${mul}.`));
+}
+
 entrada();
 adicao(num[0],num[1]);
 subtracao(num[0],num[1]);
+multiplicacao(num[0],num[1]);
