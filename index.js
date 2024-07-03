@@ -1,12 +1,19 @@
 const prompt = require("prompt-sync")({sigint:true});
 
-let num1 = +5;
-let num2 = +4;
+let num = [];
+
+function entrada(){
+    for(let i = 0; i < 2; i++){
+        number = +(prompt(`Digite o ${i+1}º número: `));
+        num.push(number);
+    }
+}
 
 function adicao(x,y){
     let soma = x + y;
 
-    return(soma);
+    return(console.log(`A soma entre os dois números digitados é igual a ${soma}.`));
 }
 
-adicao(num1, num2);
+entrada();
+adicao(num[0],num[1]);
