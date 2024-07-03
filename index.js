@@ -9,6 +9,17 @@ function entrada(){
     }
 }
 
+function operacao(){
+    console.log(`
+    ## Seleciona a operação desejada ##
+    1 - Soma
+    2 - Subtração
+    3 - Multiplicação
+    4 - Divisão
+    5 - Porcentagem`)
+    let ope = prompt("");
+    }
+
 function adicao(x,y){
     let sum = x + y;
 
@@ -40,6 +51,7 @@ function porcentagem(x,y){
 }
 
 entrada();
+operacao();
 adicao(num[0],num[1]);
 subtracao(num[0],num[1]);
 multiplicacao(num[0],num[1]);
