@@ -10,10 +10,17 @@ function entrada(){
 }
 
 function adicao(x,y){
-    let soma = x + y;
+    let sum = x + y;
 
-    return(console.log(`A soma entre os dois números digitados é igual a ${soma}.`));
+    return(console.log(`A soma entre os dois números digitados é igual a ${sum}.`));
+}
+
+function subtracao(x,y){
+    let sub = x - y;
+
+    return(console.log(`A subtração entre os dois números digitados é igual a ${sub}.`));
 }
 
 entrada();
 adicao(num[0],num[1]);
+subtracao(num[0],num[1]);
