@@ -110,3 +110,5 @@ function porcentagem(x,y){
 
 entrada();
 operacao();
+
+//AAAAAAA//
