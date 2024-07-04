@@ -4,11 +4,10 @@ let num = [];
 
 function entrada(){
 
-    for(let i = 0; i < 2; i++){
-        number = +(prompt(`Digite o ${i+1}º número: `));
+    while(num.length < 2){
+        number = +(prompt(`Digite o ${num.length+1}º número: `));
         if (isNaN(number)){
             console.log("Tipo de entrada inválida, tente um número...")
-            entrada();
         }else{
         num.push(number);
         }
