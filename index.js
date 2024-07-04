@@ -3,21 +3,80 @@ const prompt = require("prompt-sync")({sigint:true});
 let num = [];
 
 function entrada(){
+
     for(let i = 0; i < 2; i++){
         number = +(prompt(`Digite o ${i+1}º número: `));
+        if (isNaN(number)){
+            console.log("Tipo de entrada inválida, tente um número...")
+            entrada();
+        }else{
         num.push(number);
+        }
     }
 }
 
 function operacao(){
-    console.log(`
-    ## Seleciona a operação desejada ##
-    1 - Soma
-    2 - Subtração
-    3 - Multiplicação
-    4 - Divisão
-    5 - Porcentagem`)
-    let ope = prompt("");
+    
+    if(num[1] !== 0){
+        console.log(`
+        ## Seleciona a operação desejada ##
+        1 - Soma
+        2 - Subtração
+        3 - Multiplicação
+        4 - Divisão
+        5 - Porcentagem`)
+    }else{
+        console.log(`
+        ## Seleciona a operação desejada ##
+        1 - Soma
+        2 - Subtração
+        3 - Multiplicação
+        4 - Divisão (Opção indisponível)
+        5 - Porcentagem (Opção indisponível)`)
+    }
+    
+    let ope = +prompt("");
+
+    switch (ope) {
+        case 1:
+            adicao(num[0],num[1]);
+        break;
+
+            case 2:
+                subtracao(num[0],num[1]);
+            break;
+
+                case 3:
+                    multiplicacao(num[0],num[1]);
+                break;
+
+                    case 4:
+                        if(num[1] == +0){
+                            console.log("É impossível realizar uma divisão por 0")
+                            num = [];
+                            entrada();
+                            operacao();
+                        }else{
+                        divisao(num[0],num[1]);
+                        }
+                    break;
+
+                        case 5:
+                            if(num[1] == +0){
+                                console.log("É impossível realizar uma divisão por 0")
+                                num = [];
+                                entrada();
+                                operacao();
+                            }else{
+                            porcentagem(num[0],num[1]);
+                            }
+                        break;
+    
+        default:
+            console.log("\n\nDigite uma opção válida para a operação desejada...")
+            operacao();
+            break;
+    }
     }
 
 function adicao(x,y){
@@ -52,10 +111,3 @@ function porcentagem(x,y){
 
 entrada();
 operacao();
-adicao(num[0],num[1]);
-subtracao(num[0],num[1]);
-multiplicacao(num[0],num[1]);
-divisao(num[0],num[1]);
-porcentagem(num[0],num[1]);
-
-// AAAAA //
