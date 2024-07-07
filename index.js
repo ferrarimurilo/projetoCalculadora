@@ -117,3 +117,5 @@ function operacao(){                                                            
 
 entrada();                                                                                                   // Chama a função entrada().
 operacao();                                                                                                  // Chama a função operacao()..
+
+//AAAA//
