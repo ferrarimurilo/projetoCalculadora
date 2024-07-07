@@ -6,7 +6,7 @@ function entrada(){
 
     while(num.length < 2){
         number = +(prompt(`Digite o ${num.length+1}º número: `));
-        if (isNaN(number)){
+        if (isNaN(number)||number == ""){
             console.log("Tipo de entrada inválida, tente um número...")
         }else{
         num.push(number);
@@ -23,7 +23,8 @@ function operacao(){
         2 - Subtração
         3 - Multiplicação
         4 - Divisão
-        5 - Porcentagem`)
+        5 - Porcentagem
+        6 - Sair`)
     }else{
         console.log(`
         ## Seleciona a operação desejada ##
@@ -31,7 +32,8 @@ function operacao(){
         2 - Subtração
         3 - Multiplicação
         4 - Divisão (Opção indisponível)
-        5 - Porcentagem (Opção indisponível)`)
+        5 - Porcentagem (Opção indisponível)
+        6 - Sair`)
     }
     
     let ope = +prompt("");
@@ -41,40 +43,44 @@ function operacao(){
             adicao(num[0],num[1]);
         break;
 
-            case 2:
-                subtracao(num[0],num[1]);
-            break;
+        case 2:
+            subtracao(num[0],num[1]);
+        break;
 
-                case 3:
-                    multiplicacao(num[0],num[1]);
-                break;
+        case 3:
+            multiplicacao(num[0],num[1]);
+        break;
 
-                    case 4:
-                        if(num[1] == +0){
-                            console.log("É impossível realizar uma divisão por 0")
-                            num = [];
-                            entrada();
-                            operacao();
-                        }else{
-                        divisao(num[0],num[1]);
-                        }
-                    break;
+        case 4:
+            if(num[1] == +0){
+                console.log("É impossível realizar uma divisão por 0")
+                num = [];
+                entrada();
+                operacao();
+            }else{
+                divisao(num[0],num[1]);
+            }
+        break;
 
-                        case 5:
-                            if(num[1] == +0){
-                                console.log("É impossível realizar uma divisão por 0")
-                                num = [];
-                                entrada();
-                                operacao();
-                            }else{
-                            porcentagem(num[0],num[1]);
-                            }
-                        break;
+        case 5:
+            if(num[1] == +0){
+                console.log("É impossível realizar uma divisão por 0 e portanto, impossível determinar o percentual do primeiro número em relação ao segundo")
+                num = [];
+                entrada();
+                operacao();
+            }else{
+                porcentagem(num[0],num[1]);
+            }
+        break;
+
+        case 6:
+
+        break;
     
         default:
             console.log("\n\nDigite uma opção válida para a operação desejada...")
             operacao();
-            break;
+        break;
     }
     }
 
@@ -110,5 +116,3 @@ function porcentagem(x,y){
 
 entrada();
 operacao();
-
-//AAAAAAA//
