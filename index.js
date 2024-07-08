@@ -35,11 +35,11 @@ function porcentagem(x,y){                                                      
 function entrada(){                                                                                         // Função que irá solicitar a entrada de 2 números ao usuário. Fazendo a validação dos dados para aceitar apenas a entrada de números.
 
     while(num.length < 2){
-        number = +(prompt(`Digite o ${num.length+1}º número: `));
-        if (isNaN(number)||number == ""){
+        number = prompt(`Digite o ${num.length+1}º número: `).replaceAll(" ","");
+        if (isNaN(+number)||number === ""){
             console.log("Tipo de entrada inválida, tente um número...")
         }else{
-        num.push(number);
+        num.push(+number);
         }
     }
 }
@@ -116,6 +116,4 @@ function operacao(){                                                            
 
 
 entrada();                                                                                                   // Chama a função entrada().
-operacao();                                                                                                  // Chama a função operacao()..
-
-//AAAA//
+operacao();                                                                                                  // Chama a função operacao().
